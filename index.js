@@ -268,6 +268,7 @@ class Response {
     this.data = res.responseText || res.response;
     this.status = res.status
     this.statusText = res.statusText
+    this.ok = res.ok || this.status >= 200 && this.status <= 299;
     
     /* lowecase all headers keys to be consistent with Axios */
     if ('headers' in res) {
